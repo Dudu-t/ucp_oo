@@ -26,10 +26,7 @@ class view
     <script defer src=\"https://use.fontawesome.com/releases/v5.0.0/js/all.js\"></script>
 </head>";
 
-        $this->body = "<body>
-$conteudo
-
-</body>";
+        $this->body = "<body>$conteudo</body>";
 
         return $this->head.$this->body;
 
