@@ -17,7 +17,7 @@ class head
     public $page_name;
     public function head(){
         $this->head = "<!DOCTYPE html>
-<html>
+<html  class=\"has-navbar-fixed-top\">
 <head>
     <meta charset=\"utf-8\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">

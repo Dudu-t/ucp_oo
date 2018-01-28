@@ -14,7 +14,7 @@ class body extends head
     private $navbar;
     private $section;
     public function bodyPadrao($section){
-        $this->navbar = "<nav class='column is-fixed navbar is-primary' role='navigation' aria-label='main navigation'>
+        $this->navbar = "<nav class='column is-fixed-top navbar is-primary' role='navigation' aria-label='main navigation'>
   <div class='navbar-brand'>
     <a class='navbar-item' href='https://bulma.io'>
       <img src='https://bulma.io/images/bulma-logo.png' alt='Bulma: a modern CSS framework based on Flexbox' width='112' height='28'>

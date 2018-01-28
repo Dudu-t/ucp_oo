@@ -20,10 +20,10 @@ class login
     private $senha;
     private $retorno;
 
-   public function loginHtml($resultado = null)
-   {
-       $this->section = "
-<div class='box column is-6 is-offset-3' style='margin-top:80px;'> 
+    public function loginHtml($resultado = null)
+    {
+        $this->section = "<div class='column is-10'>
+<div class='box column is-5 is-offset-5' style='margin-top:80px;'> 
 <p class='title is-5'>Login</p>
 <hr />
 <div class='field'>
@@ -43,13 +43,15 @@ class login
     </span>
     
   </div>
-  <div class='control'>
-  <button class='button is-success' name='enviar'>Login</button>
+  <div class='control column'>
+  <button class='button is-success is-medium column is-12' name='enviar'>Login</button>
 </div>
-</div>$resultado
+</div>
+</div>
+$resultado
 </div>";
-       return $this->section;
-   }
+        return $this->section;
+    }
     public function authLogin(){
         if (isset($_POST['enviar'])){
             $this->usuario = $_POST['usuario'];
@@ -57,11 +59,19 @@ class login
             $this->consultaUsuario = new Connect();
             $this->resultadoConsultaUsuario = $this->consultaUsuario->query("SELECT * FROM `accounts` WHERE `Username` = '$this->usuario' AND `Password` = '$this->senha'");
             if ($this->consultaUsuario->stmt->rowCount() == 1){
-                return $this->retorno = "Funfou";
+                return $this->retorno = '
+<div class="notification is-success column is-5 is-offset-5">
+  <button class="delete"></button>
+ Usuário autenticado.
+</div>';
                 $_SESSION['usuario'] = $_POST['Usuario'];
             }
             else{
-                return $this->retorno = "Erro";
+                return $this->retorno = '
+<div class="notification is-danger column is-5 is-offset-5">
+  <button class="delete"></button>
+ Usuário ou senha inválidos.
+</div>';
             }
 
         }
