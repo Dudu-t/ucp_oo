@@ -19,7 +19,8 @@ if (isset($_SESSION['usuario'])) {
         $objMenu = new page\Menu;
         $objConteudo = new page\Personagem;
         $conteudo = $objConteudo->getExibirPersonagem();
-        $menu = $objMenu->getInicio(isset($_GET['p']));
+        $verificarPagina = isset($_GET['p']) ? $_GET['p'] : null;
+        $menu = $objMenu->getInicio($verificarPagina);
         $section = $home->getSection($conteudo, $menu);
     }
 }

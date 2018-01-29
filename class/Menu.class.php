@@ -20,7 +20,7 @@ class Menu
         if ($pagina == "home" || $pagina == null){
             $this->pPersonagens = "is-active";
         }
-        if ($pagina == "app"){
+        if ($pagina == "a"){
             $this->pCriarPesonagem = "is-active";
         }
         if ($pagina == "data"){
@@ -45,7 +45,7 @@ Menu
 </p>
 <a class=\"panel-block  $this->pPersonagens\" href='?p=home'>
 <span class=\"panel-icon\">
-<i class=\"fas fa-book\"></i>
+<i class=\"fas fa-home\"></i>
 </span>
 Meus Personagens
 </a>
@@ -55,6 +55,7 @@ Meus Personagens
 </span>
 Criar Personagem
 </a>
+
 <a class=\"panel-block $this->pMinhaConta\"  href='?p=data'>
 <span class=\"panel-icon\">
 <i class=\"fas fa-book\"></i>
