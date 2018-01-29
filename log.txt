@@ -1,0 +1,179 @@
+array(1) {
+  [0]=&gt;
+  array(87) {
+    ["ID"]=&gt;
+    string(1) "1"
+    ["Username"]=&gt;
+    string(5) "Dudut"
+    ["Character"]=&gt;
+    string(12) "Dave_Richard"
+    ["Created"]=&gt;
+    string(1) "1"
+    ["Gender"]=&gt;
+    string(1) "1"
+    ["Birthdate"]=&gt;
+    string(10) "20/05/1990"
+    ["Origin"]=&gt;
+    string(3) "EUA"
+    ["Skin"]=&gt;
+    string(3) "124"
+    ["Glasses"]=&gt;
+    string(1) "0"
+    ["Hat"]=&gt;
+    string(1) "0"
+    ["Bandana"]=&gt;
+    string(1) "0"
+    ["PosX"]=&gt;
+    string(7) "1637.87"
+    ["PosY"]=&gt;
+    string(7) "-2283.2"
+    ["PosZ"]=&gt;
+    string(7) "13.5191"
+    ["PosA"]=&gt;
+    string(7) "351.227"
+    ["Interior"]=&gt;
+    string(1) "0"
+    ["World"]=&gt;
+    string(1) "0"
+    ["GlassesPos"]=&gt;
+    string(62) "0.0000|0.0000|0.0000|0.0000|0.0000|0.0000|0.0000|0.0000|0.0000"
+    ["HatPos"]=&gt;
+    string(62) "0.0000|0.0000|0.0000|0.0000|0.0000|0.0000|0.0000|0.0000|0.0000"
+    ["BandanaPos"]=&gt;
+    string(62) "0.0000|0.0000|0.0000|0.0000|0.0000|0.0000|0.0000|0.0000|0.0000"
+    ["Hospital"]=&gt;
+    string(2) "-1"
+    ["HospitalInt"]=&gt;
+    string(2) "-1"
+    ["Money"]=&gt;
+    string(3) "250"
+    ["BankMoney"]=&gt;
+    string(3) "250"
+    ["OwnsBillboard"]=&gt;
+    string(2) "-1"
+    ["Savings"]=&gt;
+    string(1) "0"
+    ["Admin"]=&gt;
+    string(1) "0"
+    ["JailTime"]=&gt;
+    string(1) "0"
+    ["Muted"]=&gt;
+    string(1) "0"
+    ["CreateDate"]=&gt;
+    string(10) "1517165545"
+    ["LastLogin"]=&gt;
+    string(10) "1517165548"
+    ["Tester"]=&gt;
+    string(1) "0"
+    ["Gun1"]=&gt;
+    string(1) "0"
+    ["Gun2"]=&gt;
+    string(1) "0"
+    ["Gun3"]=&gt;
+    string(1) "0"
+    ["Gun4"]=&gt;
+    string(1) "0"
+    ["Gun5"]=&gt;
+    string(1) "0"
+    ["Gun6"]=&gt;
+    string(1) "0"
+    ["Gun7"]=&gt;
+    string(1) "0"
+    ["Gun8"]=&gt;
+    string(1) "0"
+    ["Gun9"]=&gt;
+    string(1) "0"
+    ["Gun10"]=&gt;
+    string(1) "0"
+    ["Gun11"]=&gt;
+    string(1) "0"
+    ["Gun12"]=&gt;
+    string(1) "0"
+    ["Gun13"]=&gt;
+    string(1) "0"
+    ["Ammo1"]=&gt;
+    string(1) "0"
+    ["Ammo2"]=&gt;
+    string(1) "0"
+    ["Ammo3"]=&gt;
+    string(1) "0"
+    ["Ammo4"]=&gt;
+    string(1) "0"
+    ["Ammo5"]=&gt;
+    string(1) "0"
+    ["Ammo6"]=&gt;
+    string(1) "0"
+    ["Ammo7"]=&gt;
+    string(1) "0"
+    ["Ammo8"]=&gt;
+    string(1) "0"
+    ["Ammo9"]=&gt;
+    string(1) "0"
+    ["Ammo10"]=&gt;
+    string(1) "0"
+    ["Ammo11"]=&gt;
+    string(1) "0"
+    ["Ammo12"]=&gt;
+    string(1) "0"
+    ["Ammo13"]=&gt;
+    string(1) "0"
+    ["House"]=&gt;
+    string(2) "-1"
+    ["Business"]=&gt;
+    string(2) "-1"
+    ["Phone"]=&gt;
+    string(1) "0"
+    ["Lottery"]=&gt;
+    string(1) "0"
+    ["Hunger"]=&gt;
+    string(3) "100"
+    ["Thirst"]=&gt;
+    string(3) "100"
+    ["PlayingHours"]=&gt;
+    string(1) "0"
+    ["Minutes"]=&gt;
+    string(1) "1"
+    ["ArmorStatus"]=&gt;
+    string(1) "0"
+    ["Entrance"]=&gt;
+    string(2) "-1"
+    ["Job"]=&gt;
+    string(1) "0"
+    ["Faction"]=&gt;
+    string(2) "-1"
+    ["FactionRank"]=&gt;
+    string(1) "0"
+    ["Prisoned"]=&gt;
+    string(1) "0"
+    ["Warrants"]=&gt;
+    string(1) "0"
+    ["Injured"]=&gt;
+    string(1) "0"
+    ["Health"]=&gt;
+    string(3) "100"
+    ["Channel"]=&gt;
+    string(1) "0"
+    ["Accent"]=&gt;
+    NULL
+    ["Bleeding"]=&gt;
+    string(1) "0"
+    ["Warnings"]=&gt;
+    string(1) "0"
+    ["Warn1"]=&gt;
+    string(0) ""
+    ["Warn2"]=&gt;
+    string(0) ""
+    ["MaskID"]=&gt;
+    string(5) "81260"
+    ["FactionMod"]=&gt;
+    string(1) "0"
+    ["Capacity"]=&gt;
+    string(2) "35"
+    ["AdminHide"]=&gt;
+    string(1) "0"
+    ["LotteryB"]=&gt;
+    string(1) "0"
+    ["SpawnPoint"]=&gt;
+    string(1) "0"
+  }
+}

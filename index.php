@@ -14,12 +14,12 @@ require_once "class/Personagem.class.php";
 
 $index = new page\body;
 if (isset($_SESSION['usuario'])) {
-    if (!isset($_GET['p']) || $_GET['p'] == "home") {
+    $verificarPagina = isset($_GET['p']) ? $_GET['p'] : null;
+    if ($verificarPagina == null || $verificarPagina == "home") {
         $home = new page\Home;
         $objMenu = new page\Menu;
         $objConteudo = new page\Personagem;
-        $conteudo = $objConteudo->getExibirPersonagem();
-        $verificarPagina = isset($_GET['p']) ? $_GET['p'] : null;
+        $conteudo = $objConteudo->getPersonagem();
         $menu = $objMenu->getInicio($verificarPagina);
         $section = $home->getSection($conteudo, $menu);
     }
