@@ -27,9 +27,7 @@ class Menu
             $this->pMinhaconta = "is-active";
         }
 
-
-
-        $this->inicio = "<div class='column is-3 is-fixed-top is-offset-1' >
+        $this->inicio = "<div class='column is-3 is-fixed-top' >
 <nav class=\"panel\">
 <p class=\"panel-heading\">
 Menu
@@ -51,14 +49,14 @@ Meus Personagens
 </a>
 <a class=\"panel-block $this->pCriarPesonagem\"  href='?p=app'>
 <span class=\"panel-icon\">
-<i class=\"fas fa-book\"></i>
+<i class=\"fas fa-user-plus  \"></i>
 </span>
 Criar Personagem
 </a>
 
 <a class=\"panel-block $this->pMinhaConta\"  href='?p=data'>
 <span class=\"panel-icon\">
-<i class=\"fas fa-book\"></i>
+<i class=\"fas fa-cog\"></i>
 </span>
 Minha Conta
 </a>

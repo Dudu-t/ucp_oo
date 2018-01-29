@@ -25,11 +25,16 @@ class Personagem
         $this->exibirPersonagem[] = "<div class='columns'>";
      foreach ($this->reposta as $this->personagem){
        //$this->dPersonagem[$this->personagem['Character']] = $this->personagem;
-
+if ($this->personagem['Admin'] > 0){
+    $this->personagem['Admin'] = "Admin";
+}
+else{
+    $this->personagem['Admin'] = "Player";
+}
       $this->exibirPersonagem[] = "<div class=\"card column is-4 \">
   <div class=\"card-image\">
     <figure class=\"image \">
-      <center><img src='img/skins/".$this->personagem['Skin'].".png' style='width:110px; height: 218px;'></center>
+      <center><img src='img/skins/".$this->personagem['Skin'].".png' style='width:80px; height: 158px;'></center>
     </figure>
   </div>
   <div class=\"card-content\">
@@ -37,14 +42,21 @@ class Personagem
       <div class=\"media-left\">
       </div>
 
-        <p class=\"\">".str_replace("_"," ",$this->personagem['Character'])."</p>
+  
     </div>
-
+    <hr />
+<center><p class=\"title is-5\">".str_replace("_"," ",$this->personagem['Character'])."</p></center>
+ <hr />
     <div class=\"content\">
-    
-      <a href=\"#\">#css</a> <a href=\"#\">#responsive</a>
-      <br>
-      <span style='font-size: 11pt;'>Ultimo login: <time datetime=\"1-1-2016\">".date("d/m/y H:i", 1517165548)."</time></span>
+    <span class='title is-6'>Informações Personagem:</span>
+    <ul>
+   <li class='subtitle is-6'>Banco: US$ ".number_format($this->personagem['BankMoney'], 2, ",", ".")."</li>
+   <li class='subtitle is-6'>Dinheiro: US$ ".number_format($this->personagem['Money'], 2, ",", ".")."</li>
+    <li class='subtitle is-6'>Tempo Jogado: ".date("H:i", $this->personagem['PlayingHours'])." horas</li>
+      <li class='subtitle is-6'>Vida: ".$this->personagem['Health']."%</li>
+      <li class='subtitle is-6'>Rank: ".$this->personagem['Admin']."</li>
+</ul>
+      <span style='font-size: 11pt;'>Ultimo login: <time datetime=\"1-1-2016\">".date("d/m/y H:i", $this->personagem['LastLogin'])."</time></span>
     </div>
   </div>
 </div>

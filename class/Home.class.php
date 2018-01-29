@@ -19,7 +19,7 @@ class Home
   
     <div class=\"container columns\">
 
-  <div class=\"card column is-9 is-offset-1\">
+  <div class=\"card column is-10 is-offset-1\">
      
   <div class=\"card-content \">
   

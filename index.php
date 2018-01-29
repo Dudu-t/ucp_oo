@@ -18,6 +18,7 @@ if (isset($_SESSION['usuario'])) {
     if ($verificarPagina == null || $verificarPagina == "home") {
         $home = new page\Home;
         $objMenu = new page\Menu;
+        $index->page_name = "Dashboard | UCP";
         $objConteudo = new page\Personagem;
         $conteudo = $objConteudo->getPersonagem();
         $menu = $objMenu->getInicio($verificarPagina);
@@ -26,7 +27,7 @@ if (isset($_SESSION['usuario'])) {
 }
 else{
     $login = new page\login();
-    $index->page_name = "Login | User Control Panel";
+    $index->page_name = "Login |UCP";
     $authLogin = $login->authLogin();
     $section= $login->loginHtml($authLogin);
 
