@@ -16,13 +16,34 @@ class Personagem
     private $dPersonagem;
     private $personagem;
 
+    private $objConnectionChecarPerson;
+    private $statusPersonagem;
+    private $obj2ConnectionChecarPerson;
 
     public function getPersonagem(){
         $this->objSql = new Connect;
         $this->usuario = $_SESSION['usuario'];
         $this->reposta = $this->objSql->query("SELECT * FROM `characters` WHERE `Username` = '$this->usuario'");
 
-        $this->exibirPersonagem[] = "<div class='columns'>";
+        $this->objConnectionChecarPerson = new Connect;
+        $this->objConnectionChecarPerson->query("SELECT * FROM `avaliacoes` WHERE `Username` = '$this->usuario' AND `Status` = '0'");
+        if ($this->objConnectionChecarPerson->stmt->rowCount() == 1){
+            $this->statusPersonagem = "<div><div class=\"notification is-link\">
+  <button class=\"delete\"></button>
+ <center>Você possui uma aplicação de um personagem aguardando avaliação.</center>
+</div></div>";
+        }
+
+        $this->obj2ConnectionChecarPerson = new Connect;
+        $this->obj2ConnectionChecarPerson->query("SELECT * FROM `avaliacoes` WHERE `Username` = '$this->usuario' AND `Status` = '2'");
+        if ($this->obj2ConnectionChecarPerson->stmt->rowCount() == 1){
+            $this->statusPersonagem = "<div><div class=\"notification is-danger\">
+  <button class=\"delete\"></button>
+ <center>Sua aplicação foi negada clique aqui para reenviar.</center>
+</div></div>";
+        }
+
+        $this->exibirPersonagem[] = "$this->statusPersonagem;<div class='columns'>";
      foreach ($this->reposta as $this->personagem){
        //$this->dPersonagem[$this->personagem['Character']] = $this->personagem;
 if ($this->personagem['Admin'] > 0){
@@ -31,7 +52,9 @@ if ($this->personagem['Admin'] > 0){
 else{
     $this->personagem['Admin'] = "Player";
 }
-      $this->exibirPersonagem[] = "<div class=\"card column is-4 \">
+
+      $this->exibirPersonagem[] = "
+<div class=\"card column is-4 \">
   <div class=\"card-image\">
     <figure class=\"image \">
       <center><img src='img/skins/".$this->personagem['Skin'].".png' style='width:80px; height: 158px;'></center>

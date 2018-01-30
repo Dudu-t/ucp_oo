@@ -11,6 +11,7 @@ require_once "class/Login.class.php";
 require_once "class/Home.class.php";
 require_once "class/Menu.class.php";
 require_once "class/Personagem.class.php";
+require_once "class/Adicionar.class.php";
 
 $index = new page\body;
 if (isset($_SESSION['usuario'])) {
@@ -22,14 +23,32 @@ if (isset($_SESSION['usuario'])) {
         $objConteudo = new page\Personagem;
         $conteudo = $objConteudo->getPersonagem();
         $menu = $objMenu->getInicio($verificarPagina);
-        $section = $home->getSection($conteudo, $menu);
+        $titulo = "Meus Personagens";
+        $section = $home->getSection($conteudo, $titulo,$menu);
     }
+    if ($verificarPagina == "app"){
+        $home = new page\Home;
+        $objMenu = new Page\Menu;
+        $objConteudo = new page\Adicionar;
+
+        $menu = $objMenu->getInicio($verificarPagina);
+        $titulo = "Criar Personagem";
+        $conteudo = $objConteudo->getHtmlCadastrar();
+        $section = $home->getSection($conteudo, $titulo,$menu);
+    }
+    if ($verificarPagina == "logout"){
+        session_destroy();
+        echo "<script>window.location = ''</script>";
+    }
+echo $_SESSION['admin'];
 }
 else{
     $login = new page\login();
-    $index->page_name = "Login |UCP";
+    $index->page_name = "Login | UCP";
     $authLogin = $login->authLogin();
     $section= $login->loginHtml($authLogin);
 
 }
+
 echo $index->bodyPadrao($section);
+//echo strpos("Carlos eduardo", "_");

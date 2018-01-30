@@ -13,17 +13,18 @@ class Home
 {
     private $section;
 
-    public function getSection($conteudo, $menu)
+    public function getSection($conteudo, $titulo,$menu)
     {
         $this->section = "  <section class=\"section \">
   
     <div class=\"container columns\">
 
   <div class=\"card column is-10 is-offset-1\">
-     
+     <h3 class=\"subtitle is-3\">$titulo</h3>
   <div class=\"card-content \">
   
 $conteudo
+
    
   </footer>
 </div>
@@ -33,6 +34,7 @@ $menu
 
   </section>
   ";
+
         return $this->section;
     }
 

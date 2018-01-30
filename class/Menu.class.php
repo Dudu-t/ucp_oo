@@ -20,14 +20,15 @@ class Menu
         if ($pagina == "home" || $pagina == null){
             $this->pPersonagens = "is-active";
         }
-        if ($pagina == "a"){
+        if ($pagina == "app"){
             $this->pCriarPesonagem = "is-active";
         }
         if ($pagina == "data"){
             $this->pMinhaconta = "is-active";
         }
 
-        $this->inicio = "<div class='column is-3 is-fixed-top' >
+        $this->inicio = "<div class='column is-3' >
+
 <nav class=\"panel\">
 <p class=\"panel-heading\">
 Menu
@@ -39,7 +40,7 @@ Menu
 <a>Fórum</a>
 <a>LSPD</a>
 <a>LSFD</a>
-<a>LIVESTER</a>
+
 </p>
 <a class=\"panel-block  $this->pPersonagens\" href='?p=home'>
 <span class=\"panel-icon\">
@@ -59,6 +60,12 @@ Criar Personagem
 <i class=\"fas fa-cog\"></i>
 </span>
 Minha Conta
+</a>
+<a class=\"panel-block\"  href='?p=logout'>
+<span class=\"panel-icon\">
+<i class=\"fas fa-sign-out-alt\"></i>
+</span>
+Sair
 </a>
 </div>
 </nav>

@@ -17,6 +17,8 @@ class login
     private $usuario;
     private $senha;
     private $retorno;
+    private $queryConsultaAdmin;
+    private $consultaAdmin;
     private $namepage;
     public function loginHtml($resultado = null)
     {
@@ -56,7 +58,16 @@ $resultado
             $this->senha = hash("Whirlpool", $_POST['senha']);
             $this->consultaUsuario = new Connect();
             $this->resultadoConsultaUsuario = $this->consultaUsuario->query("SELECT * FROM `accounts` WHERE `Username` = '$this->usuario' AND `Password` = '$this->senha'");
+
             if ($this->consultaUsuario->stmt->rowCount() == 1){
+                $this->queryConsultaAdmin = new Connect();
+                $this->queryConsultaAdmin->query("SELECT * FROM `characters` WHERE `Username` = '$this->usuario' AND `Admin` > 0 OR `Tester` = 1");
+                if ($this->queryConsultaAdmin->stmt->rowCount() > 0){
+                    $_SESSION['admin'] = 1;
+                }
+                else{
+                    $_SESSION['admin'] = 0;
+                }
                 $_SESSION['usuario'] = $_POST['usuario'];
                 echo "<script>window.location = '?p=home'</script>";
                 return $this->retorno = '
