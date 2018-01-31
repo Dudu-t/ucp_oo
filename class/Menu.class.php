@@ -7,7 +7,7 @@
  */
 
 namespace page;
-
+require_once "Connect.class.php";
 class Menu
 {
 
@@ -16,6 +16,8 @@ class Menu
     private $pCriarPesonagem;
     private $pMinhaConta;
     private $menuAdmin;
+    private $objSQL;
+    private $aguardandoAv;
 
     public function getInicio($pagina){
         if ($pagina == "home" || $pagina == null){
@@ -28,6 +30,9 @@ class Menu
             $this->pMinhaconta = "is-active";
         }
         if (isset($_GET['mAcp']) == 1 && $_SESSION['admin'] == 1){
+          $this->objSQL =  new Connect;
+          $this->objSQL->query("SELECT * FROM `avaliacoes` WHERE 1");
+           $this->aguardandoAv = $this->objSQL->stmt->rowCount();
             $this->inicio = "<div class='column is-3' >
 
 <nav class=\"panel\">
@@ -48,7 +53,7 @@ Menu
 <span class=\"panel-icon\"> 
 <i class=\"fas fa-file-alt\"></i>
 </span>
-Aplicações
+Aplicações($this->aguardandoAv)
 </a>
 </div>
 </nav>

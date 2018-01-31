@@ -12,9 +12,13 @@ require_once "Connect.class.php";
 class Avaliar
 {
     private $miojoHtml;
+    private $objSql;
 
     public function getMiojoHtml()
     {
+        $this->objSql = new Connect;
+        $this->objSql->query("SELECT * FROM `avaliacoes`");
+
         $this->miojoHtml = "";
         return $this->miojoHtml;
     }
