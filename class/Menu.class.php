@@ -15,6 +15,7 @@ class Menu
     private $pPersonagens;
     private $pCriarPesonagem;
     private $pMinhaConta;
+    private $menuAdmin;
 
     public function getInicio($pagina){
         if ($pagina == "home" || $pagina == null){
@@ -26,8 +27,39 @@ class Menu
         if ($pagina == "data"){
             $this->pMinhaconta = "is-active";
         }
+        if (isset($_GET['mAcp']) == 1 && $_SESSION['admin'] == 1){
+            $this->inicio = "<div class='column is-3' >
 
-        $this->inicio = "<div class='column is-3' >
+<nav class=\"panel\">
+<p class=\"panel-heading\">
+Menu
+</p>
+
+<p class=\"panel-tabs\">
+      
+<a href='?p=$pagina'>UCP</a>
+<a class=\"is-active\">ACP</a>
+<a>Fórum</a>
+<a>LSPD</a>
+<a>LSFD</a>
+
+</p>
+<a class=\"panel-block \" href='?p=apps&mAcp=1'>
+<span class=\"panel-icon\"> 
+<i class=\"fas fa-file-alt\"></i>
+</span>
+Aplicações
+</a>
+</div>
+</nav>
+</div>";
+
+        }
+        else {
+            if ($_SESSION['admin'] == 1) {
+                $this->menuAdmin = "<a href='?p=$pagina&mAcp=1'>ACP</a>";
+            }
+            $this->inicio = "<div class='column is-3' >
 
 <nav class=\"panel\">
 <p class=\"panel-heading\">
@@ -37,6 +69,7 @@ Menu
 <p class=\"panel-tabs\">
       
 <a class=\"is-active\">UCP</a>
+$this->menuAdmin
 <a>Fórum</a>
 <a>LSPD</a>
 <a>LSFD</a>
@@ -70,6 +103,7 @@ Sair
 </div>
 </nav>
 </div>";
+        }
         return $this->inicio;
     }
 
